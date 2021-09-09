@@ -5,6 +5,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
+    "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "test": "jest"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "@types/styled-components-react-native": "^5.1.1",
     "babel-preset-expo": "~8.3.0",
     "jest-expo": "~41.0.0",
+    "plop": "^2.7.4",
     "typescript": "~4.0.0"
   },
   "jest": {
