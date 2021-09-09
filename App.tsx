@@ -11,9 +11,10 @@ import {
 
 import theme from './src/shared/styles/theme'
 
-import { Dashboard } from './src/screen/Dashboard'
+// import Dashboard from './src/screen/Dashboard'
+import Register from './src/screen/Register'
 
-export default function App() {
+const App = () => {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
@@ -21,10 +22,13 @@ export default function App() {
   })
 
   if (!fontsLoaded) return <AppLoading />
-  
+
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <Register />
     </ThemeProvider>
   )
 }
+
+export default App

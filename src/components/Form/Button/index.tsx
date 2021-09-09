@@ -8,7 +8,7 @@ type ButtonProps = {
 } & TouchableOpacityProps
 
 const Button = ({ title, ...rest }: ButtonProps) => (
-  <S.Wrapper { ...rest }>
+  <S.Wrapper {...rest}>
     <S.Title>{title}</S.Title>
   </S.Wrapper>
 )

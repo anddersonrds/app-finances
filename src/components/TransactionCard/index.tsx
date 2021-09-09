@@ -1,15 +1,6 @@
 import React from 'react'
 
-import { 
-  Wrapper,
-  Title,
-  Amount,
-  Footer,
-  Category,
-  Icon,
-  CategoryName,
-  Date
-} from './styles'
+import * as S from './styles'
 
 type Category = {
   name: string
@@ -28,27 +19,25 @@ type Props = {
   data: TransactionCardProps
 }
 
-const icon = {
-  up: 'arrow-up-circle',
-  down: 'arrow-down-circle',
-  total: 'dollar-sign'
-}
-
-export const TransactionCard = ({ data: { type, title, amount, category, date } }: Props) => {
+export const TransactionCard = ({
+  data: { type, title, amount, category, date }
+}: Props) => {
   return (
-    <Wrapper>
-      <Title>{title}</Title>
-      <Amount type={type}>
+    <S.Wrapper>
+      <S.Title>{title}</S.Title>
+      <S.Amount type={type}>
         {type === 'outcome' && '- '}
         {amount}
-      </Amount>
-      <Footer>
-        <Category>
-          <Icon name={category.icon} />
-          <CategoryName>{category.name}</CategoryName>
-        </Category>
-        <Date>{date}</Date>
-      </Footer>
-    </Wrapper>
+      </S.Amount>
+      <S.Footer>
+        <S.Category>
+          <S.Icon name={category.icon} />
+          <S.CategoryName>{category.name}</S.CategoryName>
+        </S.Category>
+        <S.Date>{date}</S.Date>
+      </S.Footer>
+    </S.Wrapper>
   )
 }
+
+export default TransactionCard

@@ -1,14 +1,6 @@
 import React from 'react'
 
-import { 
-  Wrapper,
-  Header,
-  Title,
-  Icon,
-  Content,
-  Amount,
-  LastTransaction
-} from './styles'
+import * as S from './styles'
 
 export type HighlightProps = {
   type: 'up' | 'down' | 'total'
@@ -23,18 +15,25 @@ const icon = {
   total: 'dollar-sign'
 }
 
-export const Hightlight = ({ type, title, amount, lastTransaction }: HighlightProps) => {
+export const Hightlight = ({
+  type,
+  title,
+  amount,
+  lastTransaction
+}: HighlightProps) => {
   return (
-    <Wrapper type={type}>
-      <Header>
-        <Title type={type}>{title}</Title>
-        <Icon name={icon[type]} type={type} />
-      </Header>
+    <S.Wrapper type={type}>
+      <S.Header>
+        <S.Title type={type}>{title}</S.Title>
+        <S.Icon name={icon[type]} type={type} />
+      </S.Header>
 
-      <Content>
-        <Amount type={type}>{amount}</Amount>
-        <LastTransaction type={type}>{lastTransaction}</LastTransaction>
-      </Content>
-    </Wrapper>
+      <S.Content>
+        <S.Amount type={type}>{amount}</S.Amount>
+        <S.LastTransaction type={type}>{lastTransaction}</S.LastTransaction>
+      </S.Content>
+    </S.Wrapper>
   )
 }
+
+export default Hightlight

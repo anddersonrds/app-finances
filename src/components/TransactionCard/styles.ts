@@ -12,7 +12,7 @@ const colorModifiers = {
   `,
   outcome: (theme: DefaultTheme) => css`
     color: ${theme.colors.attention};
-  `,
+  `
 }
 
 export const Wrapper = styled.View`

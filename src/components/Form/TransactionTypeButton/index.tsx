@@ -14,8 +14,13 @@ type TransactionTypeButtonProps = {
   isActive: boolean
 } & TouchableOpacityProps
 
-const TransactionTypeButton = ({ type, title, isActive, ...rest }: TransactionTypeButtonProps) => (
-  <S.Wrapper { ...rest } type={type} isActive={isActive}>
+const TransactionTypeButton = ({
+  type,
+  title,
+  isActive,
+  ...rest
+}: TransactionTypeButtonProps) => (
+  <S.Wrapper {...rest} type={type} isActive={isActive}>
     <S.Icon name={icons[type]} type={type} />
     <S.Title>{title}</S.Title>
   </S.Wrapper>

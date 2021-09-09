@@ -12,9 +12,9 @@ export const Wrapper = styled.View<StyleProps>`
     padding: 20px 24px;
     padding-bottom: ${RFValue(42)}px;
     border-radius: 5px;
-    background-color: ${  
-      type === 'total' ? theme.colors.secondary : theme.colors.shape
-    };
+    background-color: ${type === 'total'
+      ? theme.colors.secondary
+      : theme.colors.shape};
     margin-right: 16px;
   `}
 `
@@ -28,9 +28,7 @@ export const Title = styled.Text<StyleProps>`
   ${({ theme, type }) => css`
     font-family: ${theme.fonts.regular};
     font-size: ${RFValue(14)}px;
-    color: ${
-      type === 'total' ? theme.colors.shape : theme.colors.textDark
-    };
+    color: ${type === 'total' ? theme.colors.shape : theme.colors.textDark};
   `}
 `
 
@@ -43,7 +41,7 @@ const colorModifiers = {
   `,
   total: (theme: DefaultTheme) => css`
     color: ${theme.colors.shape};
-  `,
+  `
 }
 
 export const Icon = styled(Feather)<StyleProps>`
@@ -60,17 +58,13 @@ export const Amount = styled.Text<StyleProps>`
     font-family: ${theme.fonts.medium};
     font-size: ${RFValue(32)}px;
     margin-top: 38px;
-    color: ${
-      type === 'total' ? theme.colors.shape : theme.colors.textDark
-    };
+    color: ${type === 'total' ? theme.colors.shape : theme.colors.textDark};
   `}
 `
 export const LastTransaction = styled.Text<StyleProps>`
   ${({ theme, type }) => css`
     font-family: ${theme.fonts.regular};
     font-size: ${RFValue(12)}px;
-    color: ${
-      type === 'total' ? theme.colors.shape : theme.colors.textDark
-    };
+    color: ${type === 'total' ? theme.colors.shape : theme.colors.textDark};
   `}
 `

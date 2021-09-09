@@ -25,15 +25,15 @@ export const Register = () => {
           <Input placeholder="Preço" />
 
           <S.TransactionTypes>
-            <TransactionTypeButton 
-              type="up" 
-              title="Income" 
+            <TransactionTypeButton
+              type="up"
+              title="Income"
               onPress={() => handleSelectButton('up')}
               isActive={transactionType === 'up'}
             />
-            <TransactionTypeButton 
-              type="down" 
-              title="Outcome" 
+            <TransactionTypeButton
+              type="down"
+              title="Outcome"
               onPress={() => handleSelectButton('down')}
               isActive={transactionType === 'down'}
             />

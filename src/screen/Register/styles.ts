@@ -9,7 +9,7 @@ export const Wrapper = styled.View`
 `
 
 export const Header = styled.View`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     align-items: center;
     justify-content: flex-end;
     width: 100%;
@@ -20,25 +20,21 @@ export const Header = styled.View`
 `
 
 export const Title = styled.Text`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     font-family: ${theme.fonts.regular};
     font-size: ${RFValue(18)}px;
-    color: ${theme.colors.shape} 
+    color: ${theme.colors.shape};
   `}
 `
 
 export const Form = styled.View`
-  ${({ theme }) => css`
-    flex: 1;
-    width: 100%;
-    justify-content: space-between;
-    padding: 24px;
-  `}
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  padding: 24px;
 `
 
-export const Fields = styled.View`
-  ${({ theme }) => css``}
-`
+export const Fields = styled.View``
 
 export const TransactionTypes = styled.View`
   flex-direction: row;
