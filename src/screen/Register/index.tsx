@@ -12,6 +12,10 @@ import * as S from './styles'
 export const Register = () => {
   const [transactionType, setTransactionType] = useState('')
   const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false)
+  const [category, setCategory] = useState({
+    key: 'category',
+    name: 'Categoria'
+  })
 
   const handleSelectButton = (button: 'up' | 'down'): void => {
     setTransactionType(button)
@@ -19,6 +23,10 @@ export const Register = () => {
 
   const handleCloseCategoryModal = (): void => {
     setIsCategoryModalOpen(false)
+  }
+
+  const handleOpenCategoryModal = (): void => {
+    setIsCategoryModalOpen(true)
   }
 
   return (
@@ -47,15 +55,15 @@ export const Register = () => {
             />
           </S.TransactionTypes>
 
-          <Select title="Categoria" />
+          <Select title={category.name} onPress={handleOpenCategoryModal} />
         </S.Fields>
         <Button title="Enviar" />
       </S.Form>
 
       <Modal visible={isCategoryModalOpen}>
         <CategorySelect
-          category=""
-          setCategory={}
+          category={category}
+          setCategory={setCategory}
           closeSelectCategory={handleCloseCategoryModal}
         />
       </Modal>
