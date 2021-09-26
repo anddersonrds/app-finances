@@ -28,12 +28,19 @@ export const Title = styled.Text`
   `}
 `
 
-export const Category = styled.View`
-  ${({ theme }) => css`
+type CategoryProps = {
+  isActive: boolean
+}
+
+export const Category = styled.TouchableOpacity<CategoryProps>`
+  ${({ theme, isActive }) => css`
     width: 100%;
     flex-direction: row;
     align-items: center;
     padding: ${RFValue(15)}px;
+    background-color: ${isActive
+      ? theme.colors.secondaryLight
+      : theme.colors.background};
   `}
 `
 

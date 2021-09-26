@@ -13,7 +13,7 @@ type Category = {
 }
 
 export type CategorySelectProps = {
-  category: string
+  category: Category
   setCategory: (category: Category) => void
   closeSelectCategory: () => void
 }
@@ -22,29 +22,38 @@ const CategorySelect = ({
   category,
   setCategory,
   closeSelectCategory
-}: CategorySelectProps) => (
-  <S.Wrapper>
-    <S.Header>
-      <S.Title>Categoria</S.Title>
-    </S.Header>
+}: CategorySelectProps) => {
+  const handleSetCategory = (category: Category): void => {
+    setCategory(category)
+  }
 
-    <FlatList
-      data={categories}
-      style={{ flex: 1, width: '100%' }}
-      keyExtractor={item => item.key}
-      ItemSeparatorComponent={() => <S.Divider />}
-      renderItem={({ item }) => (
-        <S.Category>
-          <S.Icon name={item.icon} />
-          <S.Name>{item.name}</S.Name>
-        </S.Category>
-      )}
-    />
+  return (
+    <S.Wrapper>
+      <S.Header>
+        <S.Title>Categoria</S.Title>
+      </S.Header>
 
-    <S.Footer>
-      <Button title="Selecionar" />
-    </S.Footer>
-  </S.Wrapper>
-)
+      <FlatList
+        data={categories}
+        style={{ flex: 1, width: '100%' }}
+        keyExtractor={item => item.key}
+        ItemSeparatorComponent={() => <S.Divider />}
+        renderItem={({ item }) => (
+          <S.Category
+            onPress={() => handleSetCategory(item)}
+            isActive={category.key === item.key}
+          >
+            <S.Icon name={item.icon} />
+            <S.Name>{item.name}</S.Name>
+          </S.Category>
+        )}
+      />
+
+      <S.Footer>
+        <Button title="Selecionar" onPress={closeSelectCategory} />
+      </S.Footer>
+    </S.Wrapper>
+  )
+}
 
 export default CategorySelect
